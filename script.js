@@ -8,8 +8,8 @@ const generateTarget = () => (Math.floor(Math.random() * 9));
 // console.log(generateTarget());
 
 const compareGuesses = (human, computer, targrt) => {
-    let humanDifference = Math.abs(human - targrt);
-    let computerDifference = Math.abs(computer - targrt);
+    let humanDifference = getAbsoluteDistance(human, targrt);
+    let computerDifference = getAbsoluteDistance(computer, targrt);
 
     if (humanDifference === computerDifference) {
         return true;
@@ -33,3 +33,5 @@ const updateScore = winner => {
 
 
 const advanceRound = () => currentRoundNumber += 1;
+
+const getAbsoluteDistance = (numberA, numberB) => Math.abs(numberA - numberB);
